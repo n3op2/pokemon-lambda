@@ -5,11 +5,10 @@ from src.utils.request import Request
 from src.utils.fibonacci import get_fibonacci
 from typing import Dict
 
-# create an instance of request for HTTP request
+# create an instance of request for calling pokemon api
 pokemon_api = Request(os.environ.get('POKEMON_API'))
 
 # omit porperties that we are not intrested
-# TODO a better way, a helper function seems overkill
 def format_pokemon(pokemon: Dict):
     # check if exception and return stringified exception
     if isinstance(pokemon, Exception): return str(pokemon)
@@ -19,7 +18,7 @@ def format_pokemon(pokemon: Dict):
         'abilities': list(map(lambda el: el['ability']['name'], pokemon['abilities']))
     }
 
-def lambda_handler(event: Dict, context: Dict={}):
+def lambda_handler(event: Dict, context: Dict):
     try:
         if not 'id' in event['pathParameters']:
             raise ValueError('missing \'pathParameters.id\' property')
@@ -35,7 +34,7 @@ def lambda_handler(event: Dict, context: Dict={}):
             })
         }
         
-    # exception will contain response body along with status 500
+    # exception will result in status 500 along with message
     except BaseException as err:
         return {
             'statusCode': 500,

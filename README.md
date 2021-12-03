@@ -80,3 +80,4 @@ tests/test_utils.py::test_requests_http_errors PASSED                           
 - [ ] - refactor `format_pokemon()` function
 - [ ] - figure out a way of persisting cache so during cold starts it won't reset
 - [ ] - error class so each unknown exception can be clearly defined
+- [ ] - *build and deployment scripts

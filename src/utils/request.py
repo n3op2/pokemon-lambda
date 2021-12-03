@@ -3,11 +3,11 @@ import requests
 from typing import Dict
 from requests.exceptions import HTTPError
 
-# TODO refactor to be async?
 # a basic requests wrapper for post and get request
 # new instance can be created - someApi = Request(<url>, <headers>)
 # <headers> - additional headers e.g. 'x-api-key: token' and etc
 # <url> - hostname with api suffix e.g. 'http://api.com/v1'
+# TODO refactor to be async?
 class Request:
     def __init__(self, url, headers: Dict={}):
         self.url = url
