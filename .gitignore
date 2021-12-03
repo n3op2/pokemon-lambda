@@ -1,11 +1,12 @@
 .pytest_cache/
+.pytest_cache/
+.pybuilder/
+build/
+__pycache__/
+
 .vscode
 .DS_Store
-__pycache__/
 *.py[cod]
 *$py.class
 .Python
-build/
 *.py,cover
-.pytest_cache/
-.pybuilder/
