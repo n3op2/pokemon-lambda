@@ -3,7 +3,6 @@
 .pybuilder/
 build/
 __pycache__/
-
 .vscode
 .DS_Store
 *.py[cod]
